@@ -2,7 +2,6 @@
 
 {
 
-  home.pointerCursor ={
    gtk = {
     enable = true;
 
@@ -43,7 +42,6 @@
       '';
     };
   };
-};
 
   home.sessionVariables.GTK_THEME = "Colloid-Dark";
   

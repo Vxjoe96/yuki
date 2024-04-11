@@ -1,4 +1,6 @@
-{config, lib, pkgs, ...}:{
+{config, lib, pkgs, ...}:
+
+{
 
   boot = {
     loader = {
@@ -10,16 +12,6 @@
      kernelPackages = pkgs.linuxPackages_zen;
      kernelParams = [ "fastboot" "quiet" "log_level=3" "systemd.show_status=auto" "splash" "udev.log_level=3"];
      consoleLogLevel = 0;
-     kernelPackages = pkgs.linuxPackages_zen;
-     kernelPatches = [
-      {
-        name = "NCT6775 driver";
-        patch = null; # no patch needed if zen-kernel is enabled
-        extraStructuredConfig = with lib.kernel; {
-          I2C_NCT6775 = lib.mkForce yes;
-        };
-      };
-    ];
   };
 
   systemd.services = {
