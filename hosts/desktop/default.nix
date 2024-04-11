@@ -2,7 +2,7 @@
 
   imports = [
     ./hardware-configuration.nix
-    ../system/default.nix
+    ../../system/default.nix
   ];
 
 
