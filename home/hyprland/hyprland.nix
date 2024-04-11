@@ -17,7 +17,24 @@
     pavucontrol
     xfce.thunar
     git
+    polkit_gnome
   ];
+
+    services = {
+    udisks2 ={
+      enable = true;
+    };
+    cliphist.enable = true;
+  };
+  
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
+};
+
   systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   wayland.windowManager.hyprland = {
     enable = true;

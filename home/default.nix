@@ -4,6 +4,7 @@
     ./gaming.nix
     ./gtk.nix
     ./hyprland/hyprland.nix
+    ./pkgs.nix
   ];
   
   home = {

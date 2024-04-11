@@ -1,4 +1,8 @@
-{inputs, pkgs, config, ...}:{
+{inputs, pkgs, config, ...}:
+
+{
+
+  home.pointerCursor ={
    gtk = {
     enable = true;
 
@@ -19,6 +23,12 @@
     cursorTheme = {
       name = "Quintom_Ink";
       package = pkgs.quintom-cursor-theme;
+      size = 16;
+    };
+
+    font = {
+      name = "Jetbrainsmono";
+      size = 11;
     };
 
     gtk3.extraConfig = {
@@ -33,6 +43,8 @@
       '';
     };
   };
+};
 
   home.sessionVariables.GTK_THEME = "Colloid-Dark";
+  
 }
