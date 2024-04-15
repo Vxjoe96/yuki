@@ -1,7 +1,12 @@
 { config, pkgs, lib, ...}:
 
   {
-
+      services = {
+    udisks2 ={
+      enable = true;
+    };
+    cliphist.enable = true;
+  };
      security.rtkit.enable = true;
       services.pipewire = {
       enable = true;
