@@ -1,7 +1,7 @@
 {inputs, pkgs, config, ...}:{
     home.packages = with pkgs; [
       steam
-      discord
+      vesktop
       gamescope
       mangohud
       bottles
