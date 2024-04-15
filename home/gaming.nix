@@ -3,7 +3,7 @@
       steam
       discord
       gamescope
-      magohud
+      mangohud
       bottles
       wine
       winetricks
