@@ -18,14 +18,8 @@
     xfce.thunar
     git
     polkit_gnome
+    dconf
   ];
-
-    services = {
-    udisks2 ={
-      enable = true;
-    };
-    cliphist.enable = true;
-  };
   
   xdg.portal = {
     enable = true;
