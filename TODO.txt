@@ -1,0 +1,20 @@
+Hyprland -
+  Config
+  Hypridle
+  Hyprlock
+  Hyprpaper
+  wrapperhl & bashprofile
+  pkgs for wm 
+
+Gaming - 
+  Steam
+  mangohud
+  gamescope
+  lutris/bottles
+
+Socal - 
+  discord
+
+Work - 
+  RDP
+
