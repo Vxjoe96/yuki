@@ -13,8 +13,11 @@
           options = "--delete-generations +3";
       };
 
-  nixpkgs.config.allowUnfree = true;
-
-  system.stateVersion = "unstable";
+  nixpkgs = {
+    config.allowUnfree = true;
+    config.permittedInsecurePackages = [
+      "electron-25.9.0"
+    ];
+  };
   
-  }
+}

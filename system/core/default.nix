@@ -1,18 +1,5 @@
-{ config, pkgs, lib, ... }: {
-
-  imports = [
-    ./hardware-configuration.nix
-    ../../system
-  ];
-
-
-  ##User
-
-      users.users.joseph = {
-          isNormalUser = true;
-          description = "joseph";
-          extraGroups = [ "networkmanager" "wheel" ];
-    };
+{lib, ...}:
+{
 
   time.timeZone = lib.mkDefault "America/Denver";
   time.hardwareClockInLocalTime = lib.mkDefault true;
@@ -30,15 +17,11 @@
     LC_TIME = "en_US.UTF-8";
   };
   
-  networking.hostName = "joseph";
-
   system.stateVersion = lib.mkDefault "23.11";
 
   zramSwap = {
     enable = true;
     algorithm = "zstd";
   };
-
-  services.fstrim.enable = true;
 
 }

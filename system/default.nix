@@ -2,7 +2,9 @@
 
   imports = [
     ./hardware
-    ./nixsettings.nix
+    ./network
+    ./programs
+    ./nix
   ];
 
 }

@@ -1,16 +1,20 @@
 {inputs, pkgs, config, ...}:
 {
   imports = [
-    ./gaming.nix
+    ./wm/hyprland
+    ./terminal
+    ./software/browsers/firefox.nix
+    ./software/browsers/chrome.nix
+    ./software/gaming
+    ./software/media/spotify.nix
+    ./editors/vscode
     ./gtk.nix
-    ./hyprland/hyprland.nix
-    ./pkgs.nix
   ];
   
   home = {
     username = "joseph";
     homeDirectory = "/home/joseph";
-    stateVersion = "24.05";
+    stateVersion = "23.11";
   };
 
   programs.home-manager.enable = true;

@@ -1,10 +1,17 @@
-{inputs, pkgs, config, ...}:{
+{inputs, pkgs, config, ...}:
+{
+
+  imports = [
+    ./config.nix
+    ./waybar.nix
+    ../launchers/anyrun.nix
+  ];
+
   home.packages = with pkgs; [
     hyprpicker
     hypridle
     hyprlock
     hyprpaper
-    waybar
     wofi
     grim
     slurp
@@ -16,26 +23,21 @@
     xwaylandvideobridge
     pavucontrol
     xfce.thunar
-    git
+    xfce.thunar-archive-plugin
+    xfce.tumbler
     polkit_gnome
     dconf
   ];
   
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
-      xdg-desktop-portal-gtk
-    ];
-};
-
-  systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   wayland.windowManager.hyprland = {
     enable = true;
-    xwayland = {
-      enable = true;
+    systemd = {
+      variables = {"--all"};
+      extraCommands = [
+        "systemctl --user stop graphical-session.target"
+        "systemctl --user start hyprland-session.target"
+      ];
     };
-    systemd.enable = true;
   };
 
     home.sessionVariables = {
