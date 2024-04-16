@@ -20,7 +20,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./host/desktop
+          ./hosts/desktop
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
