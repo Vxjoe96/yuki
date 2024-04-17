@@ -3,7 +3,7 @@
   programs = {
     waybar = {
       enable = true;
-      systemd{
+      systemd = {
         enable = true;
         target = "hyprland-session.target";
       };
@@ -22,10 +22,6 @@
     
     "hyprland/window" = {
         format = "{}";
-        rewrite = {
-            "(.*) — Mozilla Firefox":"$1";
-            "(.*) - Code - OSS":"$1";
-        };
     };
 
     tray = {
@@ -66,5 +62,4 @@
       '';
       };
     };
-  };
 }

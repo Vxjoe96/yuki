@@ -11,7 +11,7 @@
 
     theme = {
        name = "Flat-Remix-GTK-Grey-Darkest";
-       package = pkgs.flat-remix-gtk
+       package = pkgs.flat-remix-gtk;
     };
 
     font = {
