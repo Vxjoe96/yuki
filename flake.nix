@@ -29,30 +29,29 @@
 
     };
 
-    outputs = {self, ...}@inputs:
+    outputs = {nixpkgs, home-manager, ...}@inputs:
         let 
             system = "x86_64-linux";
-            pkgs = nixpkgs.legacyPackages.${system};
         in 
         {
             #Gaming-Desktop ##use the code snippet to make differnt configs for hosts 
             nixosConfigurations = {
                 GamingDesktop = nixpkgs.lib.nixosSystem {
                     inherit system;
-                    extraSpecialArgs = {inherit inputs;};
+                    specialArgs = {inherit inputs;};
                     modules = [
                         ./system
                         ./hardware-configuration.nix
 
-                        #home-manager.nixosModules.home-manager
-                        #{
-                        #    home-manager.useGlobalPkgs = true;
-                        #    home-manager.useUserPackages = true;
-                        #    home-manager.users.joseph = import ./home/default.nix;
-
-                            # Optionally, use home-manager.extraSpecialArgs to pass
-                            # arguments to home.nix
-                        #}
+                        home-manager.nixosModules.home-manager
+                        {
+                            home-manager.useGlobalPkgs = true;
+                            home-manager.useUserPackages = true;
+                            home-manager.users.joseph = import ./home/default.nix;
+                            home-manager.extraSpecialArgs = {inherit inputs;};
+                           # Optionally, use home-manager.extraSpecialArgs to pass
+                           # arguments to home.nix
+                        }
                     ];
                 };
             };
