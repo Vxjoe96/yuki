@@ -1,6 +1,12 @@
 {lib, ...}:
 {
 
+  imports = [
+    ./boot.nix
+    ./security.nix
+    ./users.nix
+  ];
+
   time.timeZone = lib.mkDefault "America/Denver";
   time.hardwareClockInLocalTime = lib.mkDefault true;
 
