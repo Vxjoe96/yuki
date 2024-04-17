@@ -3,7 +3,7 @@
 
   networking.networkmanager = {
     enable = true;
-    dns = "system-resovled";
+    dns = "systemd-resovled";
     wifi.powersave = true;
     enableIPv6 = false;
   };
