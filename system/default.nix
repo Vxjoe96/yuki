@@ -3,6 +3,8 @@
   imports = [
     ./core
     ./nix
+    ./programs
+    ./hardware
   ];
 
 }
