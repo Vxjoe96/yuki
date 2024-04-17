@@ -41,7 +41,7 @@
                     inherit system;
                     extraSpecialArgs = {inherit inputs;};
                     modules = [
-                        ./system.nix
+                        ./system
                         #home-manager.nixosModules.home-manager
                         #{
                         #    home-manager.useGlobalPkgs = true;
